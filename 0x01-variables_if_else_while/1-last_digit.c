@@ -9,7 +9,7 @@
 /**
   * main - Prints the last digit of a number
   * Description: Prints a different string depending on the value
-  * Return - Returns 0
+  * Return: - Returns 0
   */
 int main(void)
 {
