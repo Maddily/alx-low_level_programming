@@ -13,6 +13,7 @@ void times_table(void)
 		for (j = 0; j <= 9; j++)
 		{
 			int product = i * j;
+			int next_product = i * (j + 1);
 
 			if (product > 9)
 			{
@@ -20,14 +21,20 @@ void times_table(void)
 				_putchar((product % 10) + '0');
 				if (j == 9)
 					break;
-				_putchar(',');
-				_putchar(' ');
 			}
 			else
 			{
 				_putchar(product + '0');
 				if (j == 9)
 					break;
+			}
+			if (next_product > 9)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+			else
+			{
 				_putchar(',');
 				_putchar(' ');
 				_putchar(' ');
