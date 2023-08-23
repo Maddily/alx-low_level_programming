@@ -8,20 +8,17 @@
 char *rot13(char *str)
 {
 	int i;
-	/* char lower[] = "abcdefghijklmnopqrstuvwxyz"; */
-	/* char upper[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; */
 	char *l = "nopqrstuvwxyzabcdefghijklm";
 	char *u = "NOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	for (i = 0; str[i]; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
 		{
-			str[i] = l[str[i] - 'a'];
-		}
-		else if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			str[i] = u[str[i] - 'A'];
+			if (str[i] >= 'a' && str[i] <= 'z')
+				str[i] = l[str[i] - 'a'];
+			else
+				str[i] = u[str[i] - 'A'];
 		}
 	}
 	return (str);
