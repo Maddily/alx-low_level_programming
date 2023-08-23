@@ -7,18 +7,20 @@
  */
 char *rot13(char *str)
 {
-	int i;
-	char *l = "nopqrstuvwxyzabcdefghijklm";
-	char *u = "NOPQRSTUVWXYZABCDEFGHIJKLM";
+	int i, j;
+	char rot1[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot2[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+		for (j = 0; rot1[j] != '\0'; j++)
 		{
-			if (str[i] >= 'a' && str[i] <= 'z')
-				str[i] = l[str[i] - 'a'];
-			else
-				str[i] = u[str[i] - 'A'];
+			if (str[i] == rot1[j])
+			{
+				str[i] = rot2[j];
+				break;
+			}
+
 		}
 	}
 	return (str);
