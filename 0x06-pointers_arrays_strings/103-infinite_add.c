@@ -40,5 +40,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[k] = carry + '0';
 	else
 		k++;
+	r[maxLen + 1] = '\0';
 	return (r);
 }
