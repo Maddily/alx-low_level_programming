@@ -11,7 +11,7 @@
 void print_buffer(char *b, int size)
 {
 	int i, j, l = 0;
-	unsigned char *b2 = (unsigned char*) b;
+	unsigned char *b2 = (unsigned char *) b;
 
 	if (size <= 0)
 	{
