@@ -1,7 +1,5 @@
 #include "main.h"
 
-#define NULL ((void *)0)
-
 /**
  * _strpbrk - Locates the first occurrence in the string s
  * of any of the characters in the string accept
