@@ -1,7 +1,5 @@
 #include "main.h"
 
-#define NULL ((void *)0)
-
 /**
  * _strchr - Locates a character in a string
  * @s: A pointer to a string to be searched
