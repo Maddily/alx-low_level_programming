@@ -10,3 +10,4 @@ int is_palindrome(char *s);
 int _sqrt(unsigned long n, unsigned long s, unsigned long e);
 int helper(int num, int n);
 int _strlen(char *s);
+int pal_helper(char *s, int start, int end);
