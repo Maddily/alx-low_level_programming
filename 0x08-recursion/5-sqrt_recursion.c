@@ -13,9 +13,9 @@
  * @e: End point
  * Return: The square root of n, if found
  */
-int _sqrt(int n, int s, int e)
+int _sqrt(unsigned long n, unsigned long s, unsigned long e)
 {
-	int mid;
+	unsigned long mid;
 
 	if (s > e)
 		return (-1);
@@ -25,9 +25,9 @@ int _sqrt(int n, int s, int e)
 	if (mid * mid == n)
 		return (mid);
 	else if (mid * mid > n)
-		return _sqrt(n, s, mid - 1);
+		return (_sqrt(n, s, mid - 1));
 	else
-		return _sqrt(n, mid + 1, e);
+		return (_sqrt(n, mid + 1, e));
 }
 /**
  * _sqrt_recursion - Finds the natural square root of a number
@@ -38,5 +38,5 @@ int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
-	return _sqrt(n, 0, n);
+	return (_sqrt(n, 0, n));
 }
