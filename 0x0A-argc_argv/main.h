@@ -1,1 +1,1 @@
-#define UNUSED(argc) (void)(argc)
+#define UNUSED(x) (void)(x)
