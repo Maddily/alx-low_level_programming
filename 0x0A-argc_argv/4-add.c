@@ -6,7 +6,7 @@
  * main - Prints the sum of positive numbers passed as arguments
  * @argc: The number of arguments in the command line
  * @argv: A pointer to an array of pointers to arguments in the command line
- * Return: 0
+ * Return: 0 if successful, 1 if not
  */
 int main(int argc, char *argv[])
 {
