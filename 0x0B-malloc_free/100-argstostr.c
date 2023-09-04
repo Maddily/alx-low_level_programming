@@ -3,8 +3,9 @@
 
 /**
  * argstostr - Concatenates all arguments of a program
- * @ac - Argument count
+ * @ac: Argument count
  * @av: A pointer to the first argument
+ * Return: A pointer to the concatenated string
  */
 char *argstostr(int ac, char **av)
 {
