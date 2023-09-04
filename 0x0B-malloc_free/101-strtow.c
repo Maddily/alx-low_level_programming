@@ -70,7 +70,7 @@ void addWord(int words, int i, int j, int k, int l, int wordLen, char *str,
  */
 char **strtow(char *str)
 {
-	int i, j, k, l, words, wordLen;
+	int i, j, k, l, words = 0, wordLen;
 	char **arr;
 
 	if (str == NULL || findLength(str) == 0)
@@ -85,6 +85,9 @@ char **strtow(char *str)
 				words++;
 		}
 	}
+
+	if (words == 0)
+		return (NULL);
 
 	arr = malloc((words + 1) * sizeof(char *));
 
