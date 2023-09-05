@@ -51,7 +51,10 @@ void addWord(int i, int j, int k, int l, int wordLen, char *str,
 				exit(1);
 
 			for (l = 0; l < wordLen; l++)
-				arr[k][l] = str[i++];
+			{
+				arr[k][l] = str[i];
+				i++;
+			}
 
 			arr[k][l] = '\0';
 			k++;
@@ -66,7 +69,7 @@ void addWord(int i, int j, int k, int l, int wordLen, char *str,
  */
 char **strtow(char *str)
 {
-	int i, j, k, l, words = 0, wordLen = 0;
+	int i = 0, j, k, l, words = 0, wordLen = 0;
 	char **arr;
 
 	if (str == NULL || findLength(str) == 0)
