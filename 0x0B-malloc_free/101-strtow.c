@@ -18,7 +18,6 @@ int findLength(char *str)
 
 /**
  * addWord - Adds words to array of words arr
- * @words: Word count
  * @i: index
  * @j: index
  * @k: index
