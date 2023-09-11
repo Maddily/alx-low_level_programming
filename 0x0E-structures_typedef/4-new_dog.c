@@ -18,9 +18,10 @@ int find_length(char *s)
 
 /**
  * copy_string - Copies a string
- * dest: A pointer to the copy
+ * @dest: A pointer to the copy
  * @src: A pointer to the original string
  * @len: The length of the original string
+ * Return: A pointer to the copy
  */
 char *copy_string(char *dest, char *src, int len)
 {
