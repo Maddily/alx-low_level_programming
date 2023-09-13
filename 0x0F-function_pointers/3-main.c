@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <limits.h>
 #include <stdlib.h>
 #include <string.h>
 #include "3-calc.h"
@@ -25,9 +24,6 @@ int main(int argc, char *argv[])
 	}
 
 	result = op_func(a, b);
-
-	/* if ((a > 0 && b > 0 && result < 0) || (a < 0 && b < 0 && result > 0)) */
-	/* 	result = INT_MAX; */
 
 	printf("%d\n", result);
 
