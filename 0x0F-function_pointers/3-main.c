@@ -26,8 +26,8 @@ int main(int argc, char *argv[])
 
 	result = op_func(a, b);
 
-	if ((a > 0 && b > 0 && result < 0) || (a < 0 && b < 0 && result > 0))
-		result = INT_MAX;
+	/* if ((a > 0 && b > 0 && result < 0) || (a < 0 && b < 0 && result > 0)) */
+	/* 	result = INT_MAX; */
 
 	printf("%d\n", result);
 
