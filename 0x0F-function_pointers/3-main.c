@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 #include <stdlib.h>
 #include <string.h>
 #include "3-calc.h"
@@ -17,25 +18,17 @@ int main(int argc, char *argv[])
 	int (*op_func)(int, int) = get_op_func(op);
 	int result;
 
-	if (argc != 4)
+	if (argc != 4 || op_func == NULL || ((*op == '/' || *op == '%') && b == 0))
 	{
 		puts("Error");
-		exit(98);
-	}
-
-	if (op_func == NULL)
-	{
-		puts("Error");
-		exit(99);
-	}
-
-	if ((*op == '/' || *op == '%') && b == 0)
-	{
-		puts("Error");
-		exit(100);
+		exit((argc != 4) ? 98 : (op_func == NULL) ? 99 : 100);
 	}
 
 	result = op_func(a, b);
+
+	if ((a > 0 && b > 0 && result < 0) || (a < 0 && b < 0 && result > 0))
+		result = INT_MAX;
+
 	printf("%d\n", result);
 
 	return (0);
