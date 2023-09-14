@@ -103,9 +103,9 @@ void print_all(const char * const format, ...);
 	* `f`: `float`
 	* `s`: `char *` (If the string is NULL, it prints "(nil)" instead).
 	* Any other character is ignored.
-	* You are not allowed to use `for`, `goto`, ternary operator, `else` and `do ... while`.
-	* You can use a maximum of two `while` loops and two `if`.
-	* You can declare a maximum of 9 variables.
+* You are not allowed to use `for`, `goto`, ternary operator, `else` and `do ... while`.
+* You can use a maximum of two `while` loops and two `if`.
+* You can declare a maximum of 9 variables.
 
 ### Example
 
