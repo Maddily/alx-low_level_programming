@@ -7,9 +7,10 @@
  */
 size_t print_list(const list_t *h)
 {
-	int i = 0;
+	int i = 0, j;
 	size_t n = 0, len;
 	const list_t *current = h;
+	char null_str[] = "[0] (nil)";
 	char len_str[10];
 
 	while (current != NULL)
@@ -17,15 +18,8 @@ size_t print_list(const list_t *h)
 		i = 0;
 		if (current->str == NULL)
 		{
-			_putchar('[');
-			_putchar('0');
-			_putchar(']');
-			_putchar(' ');
-			_putchar('(');
-			_putchar('n');
-			_putchar('i');
-			_putchar('l');
-			_putchar(')');
+			for (j = 0; null_str[j] != '\0'; j++)
+				_putchar(null_str[j]);
 		}
 		else
 		{
