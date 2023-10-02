@@ -11,7 +11,7 @@ ssize_t read_textfile(const char *filename, size_t letters);
 int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
 int _strlen(char *s);
-void close_and_check(int fd_from, int fd_to);
-void exit_99(int fd_from, int fd_to, char *file_to);
+void closeAndCheck(int fdFrom, int fdTo);
+void exit99(int fdFrom, int fdTo, char *fileTo);
 
 #endif
