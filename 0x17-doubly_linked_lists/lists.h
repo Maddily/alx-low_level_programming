@@ -31,5 +31,6 @@ int sum_dlistint(dlistint_t *head);
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 dlistint_t *insert_node(dlistint_t *current,
 	dlistint_t *new_node, unsigned int idx, unsigned int *i);
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 
 #endif
