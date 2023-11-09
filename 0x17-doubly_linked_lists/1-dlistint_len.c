@@ -12,6 +12,7 @@ size_t dlistint_len(const dlistint_t *h)
 	const dlistint_t *c;
 	int n = 0;
 
+	/*If the list is empty*/
 	if (h == NULL)
 		return (0);
 

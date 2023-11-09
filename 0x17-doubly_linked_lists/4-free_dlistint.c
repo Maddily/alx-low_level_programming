@@ -9,6 +9,7 @@ void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *current;
 
+	/*If the list is empty*/
 	if (head == NULL)
 		return;
 
