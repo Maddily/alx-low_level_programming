@@ -1,2 +1,3 @@
 #!/bin/bash
-echo 'int rand(void) { return 9; } int system(const char *command) { return 0; }' | gcc -fPIC -shared -o /tmp/libwin.so -xc - && export LD_PRELOAD=/tmp/libwin.so
+wget -P /tmp https://github.com/Maddily/alx-low_level_programming/blob/master/0x18-dynamic_libraries/libwin.so
+export LD_PRELOAD=/tmp/libwin.so
