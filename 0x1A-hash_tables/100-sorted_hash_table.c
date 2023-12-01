@@ -172,20 +172,25 @@ void shash_table_print_rev(const shash_table_t *ht)
 */
 void shash_table_delete(shash_table_t *ht)
 {
+	unsigned long int i;
 	shash_node_t *current, *temp;
 
 	/*If the hash table is empty*/
 	if (!ht)
 		return;
 
-	current = ht->shead;
-	while (current)
+	/*Iterate over the hash table and free allocated memory*/
+	for (i = 0; i < ht->size; i++)
 	{
-		temp = current->snext;
-		free(current->key);
-		free(current->value);
-		free(current);
-		current = temp;
+		current = ht->array[i];
+		while (current)
+		{
+			temp = current;
+			free(current->key);
+			free(current->value);
+			current = current->next;
+			free(temp);
+		}
 	}
 	free(ht->array);
 	free(ht);
