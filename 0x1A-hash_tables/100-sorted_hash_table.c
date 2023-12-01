@@ -217,7 +217,7 @@ unsigned long int index)
 	if (!ht->array[index])
 		return (0);
 	/*Handle the case when the table/list is empty*/
-	if (!ht->shead || !ht)
+	if (!ht->shead || !ht->stail)
 		ht->shead = ht->stail = ht->array[index];
 	else
 	{
