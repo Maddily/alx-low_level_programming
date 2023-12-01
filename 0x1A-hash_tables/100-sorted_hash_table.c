@@ -47,10 +47,11 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	shash_node_t *current, *new_node;
 
 	/*Handle an empty hash table or a NULL key/value*/
-	if (!ht || !key || !value)
+	if (!ht || !key || *key == '\0' || !value)
 		return (0);
-
 	index = key_index((unsigned char *)key, ht->size);
+	if (index >= ht->size)
+		return (0);
 
 	/*If key doesn't exist (nothing is at that index), add it*/
 	if (!ht->array[index])
@@ -98,7 +99,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	shash_node_t *current;
 
 	/*Handle an empty hash table or a NULL key or array*/
-	if (!ht || !key || !ht->array)
+	if (!ht || !key || *key == '\0' || !ht->array)
 		return (NULL);
 
 	/*Traverse the sorted list and retrieve the value*/
@@ -124,7 +125,7 @@ void shash_table_print(const shash_table_t *ht)
 	shash_node_t *current;
 
 	/*If the list is empty*/
-	if (!ht->shead)
+	if (!ht || !ht->shead)
 		return;
 	current = ht->shead;
 	printf("{");
@@ -149,7 +150,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 	shash_node_t *current;
 
 	/*If the list is empty*/
-	if (!ht->shead)
+	if (!ht || !ht->shead)
 		return;
 	current = ht->stail;
 	printf("{");
@@ -216,7 +217,7 @@ unsigned long int index)
 	if (!ht->array[index])
 		return (0);
 	/*Handle the case when the table/list is empty*/
-	if (!ht->shead)
+	if (!ht->shead || !ht)
 		ht->shead = ht->stail = ht->array[index];
 	else
 	{
@@ -256,7 +257,7 @@ void add_to_slist(shash_table_t *ht, unsigned long int index)
 	shash_node_t *current;
 
 	/*Handle the case when the table/list is empty*/
-	if (!ht->shead)
+	if (!ht->shead || !ht)
 		ht->shead = ht->stail = ht->array[index];
 	else
 	{
