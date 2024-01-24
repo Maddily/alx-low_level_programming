@@ -9,7 +9,7 @@ all: $(NAME)
 $(NAME): $(OBJ) m.h
 	$(CC) $(OBJ) -o $(NAME)
 
-.PHONY: clean oclean fclean re
+.PHONY: clean oclean fclean re all
 
 clean:
 	$(RM) *~ $(NAME)
