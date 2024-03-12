@@ -1,19 +1,6 @@
 #include "search_algos.h"
 
 /**
- * find_min - Finds the minimum of two numbers.
- *
- * @a: The first number
- * @b: The second number
- *
- * Return: The smaller number.
-*/
-size_t find_min(size_t a, size_t b)
-{
-	return ((a < b) ? a : b);
-}
-
-/**
  * jump_search - Searches for a value in a sorted array of integers,
  * using the Jump search algorithm.
  *
