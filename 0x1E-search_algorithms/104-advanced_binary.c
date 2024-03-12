@@ -45,7 +45,7 @@ int binary_search_helper(int *array, int start_index, int end_index, int value)
 	if (array[middle_index] == value)
 	{
 		if (middle_index == start_index || array[middle_index - 1] != value)
-		return (middle_index);
+			return (middle_index);
 
 		end_index = middle_index;
 	}
